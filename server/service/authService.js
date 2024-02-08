@@ -34,4 +34,4 @@ exports.isPermissionIn = async (req, res, next) => {
     } else{
         res.status(403).json(response.responseFromMessage(responseText.response_text.fail, responseText.auth_message.fail_not_permission));
     };
-}
+};
