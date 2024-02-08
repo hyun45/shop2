@@ -28,3 +28,20 @@ exports.login = (req, res, next) => {
         });
     })(req, res, next);
 };
+
+exports.logout = async (req, res, next) => {
+    req.logout((error) => {
+        if(error){
+            return next(error);
+        };
+
+        req.session.destroy((destroyError) => {
+            if(destroyError){
+                return next(destroyError);
+            };
+
+            res.clearCookie('session-cookie');
+            return res.json(response.responseFromMessage(responseText.response_text.success, responseText.auth_message.success));
+        });
+    });
+};

@@ -6,6 +6,7 @@ const authService = require('../service/authService');
 const authController = require('../controller/authController');
 
 router.post('/login', authService.isNotLoggedIn, authController.login);
+router.post('/logout', authService.isLoggedIn, authController.logout);
 
 router.use((req, res, next) => {
     next('Not found error');
