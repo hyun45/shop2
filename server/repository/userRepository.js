@@ -9,3 +9,5 @@ exports.createUser = (email, name, password, phone) => User.create({
 exports.getUserType = (email) => User.findOne({where : {email}, attributes : ['userType']});
 
 exports.findAllUser = () => User.findAll({attributes : ['email', 'name', 'phone']});
+
+exports.getUser = (userId) => User.findOne({where : {userId}, attributes : ['email', 'name', 'phone']});

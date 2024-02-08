@@ -26,3 +26,12 @@ exports.isAdminIn = async (req, res, next) => {
         res.status(403).json(response.responseFromMessage(responseText.response_text.fail, responseText.auth_message.fail_not_permission));
     };
 };
+
+exports.isPermissionIn = async (req, res, next) => {
+    const user = await userRepository.getUserType(req.user.email);
+    if(user.userType || req.user.email){
+        next();
+    } else{
+        res.status(403).json(response.responseFromMessage(responseText.response_text.fail, responseText.auth_message.fail_not_permission));
+    };
+}

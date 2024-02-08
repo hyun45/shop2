@@ -14,3 +14,9 @@ exports.getUser = async (req, res, next) => {
         .then((user) => res.status(200).json(response.responseFromData(responseText.response_text.success, responseText.user_message.get, user)))
         .catch(error => next(error));
 };
+
+exports.findUser = async (req, res, next) => {
+    await userService.getUser(req.params.userId)
+        .then((user) => res.json(response.responseFromData(responseText.response_text.success, responseText.user_message.get, user)))
+        .catch(error => next(error)); 
+};

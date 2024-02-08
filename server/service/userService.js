@@ -19,3 +19,11 @@ exports.findAllUser = async () => {
     };
     return user;
 };
+
+exports.getUser = async (userId) => {
+    const user = await userRepository.getUser(userId);
+    if(!user){
+        throw `[userService] ${userId} 유저 정보 없음`;
+    };
+    return user;
+};
