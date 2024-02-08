@@ -1,0 +1,1 @@
+exports.index = async (req, res) => res.status(200).send('<h1>테스트</h1>');
