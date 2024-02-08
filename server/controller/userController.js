@@ -8,3 +8,9 @@ exports.createUser = async (req, res, next) => {
         .then(() => res.status(200).json(response.responseFromMessage(responseText.response_text.success, responseText.user_message.create)))
         .catch(error => next(error));
 };
+
+exports.getUser = async (req, res, next) => {
+    await userService.findAllUser()
+        .then((user) => res.status(200).json(response.responseFromData(responseText.response_text.success, responseText.user_message.get, user)))
+        .catch(error => next(error));
+};

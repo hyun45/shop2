@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
-const userController = require('../controller/userController')
+const userController = require('../controller/userController');
+const authService = require('../service/authService');
 const response = require('../data/responseFrom');
 const responseText = require('../data/responseString');
 
 router.use(bodyParser.json());
 
+router.get('/', authService.isLoggedIn, authService.isAdminIn, userController.getUser);
 router.post('/signUp', userController.createUser);
 
 router.use((req, res, next) => {

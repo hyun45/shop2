@@ -10,3 +10,12 @@ exports.createUser = async (email, name, password, phone) => {
     const hash = await bcrypt.hash(password, 12);
     await userRepository.createUser(email, name, hash, phone);
 };
+
+exports.findAllUser = async () => {
+    const user = await userRepository.findAllUser();
+    if(!user){
+        console.error('[userService] 유저 정보 없음');
+        throw '유저 정보 없음';
+    };
+    return user;
+};
