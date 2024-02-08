@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import Main from './pages/Main';
 import Navbar from './layouts/Navbar';
@@ -6,9 +5,9 @@ import Footer from './layouts/Footer';
 
 function Layout() {
   return (
-    <div>
+    <div className='flex flex-col h-screen justify-between'>
       <Navbar />
-      <main>
+      <main className='mb-auto w-11/12 mx-auto'>
         <Outlet />
       </main>
       <Footer />
