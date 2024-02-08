@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const indexRouter = require('./routes');
+const userRouter = require('./routes/userRoute');
 const { sequelize } = require('./models');
 
 dotenv.config();
@@ -12,9 +13,10 @@ app.use(express.json());
 sequelize
     .sync({ force : false })
     .then(() => console.log('데이터베이스 연결 성공'))
-    .catch((error) => console.error(error));
+    .catch((error) => console.error(error))
 
 app.use('/', indexRouter);
+app.use('/user', userRouter);
 
 app.use((err, req, res, next) => {
     console.error(err);
