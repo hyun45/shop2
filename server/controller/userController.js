@@ -27,3 +27,10 @@ exports.updateUser = async (req, res, next) => {
         .then(() => res.status(200).json(response.responseFromMessage(responseText.response_text.success, responseText.user_message.update)))
         .catch(error => next(error));
 };
+
+exports.deleteUser = async (req, res, next) => {
+    const userId = req.params.userId;
+    await userService.deleteUser(userId)
+        .then(() => res.status(200).json(response.responseFromMessage(responseText.response_text.success, responseText.user_message.delete)))
+        .catch(error => next(error));
+};

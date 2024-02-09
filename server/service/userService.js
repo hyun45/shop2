@@ -37,3 +37,12 @@ exports.updateUser = async (email, phone) => {
     await userRepository.updateUser(email, phone);
     console.log(`${email} 유저 정보 업데이트 완료`);
 };
+
+exports.deleteUser = async (userId) => {
+    const result = await userRepository.deleteUser(userId);
+    if(!result){
+        console.error('[userService] 유저 정보 삭제 실패');
+        throw ('Not delete');
+    };
+    console.log(`${userId} 유저 삭제 완료`);
+};
