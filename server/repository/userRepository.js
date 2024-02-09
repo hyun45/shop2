@@ -11,3 +11,5 @@ exports.getUserType = (email) => User.findOne({where : {email}, attributes : ['u
 exports.findAllUser = () => User.findAll({attributes : ['email', 'name', 'phone']});
 
 exports.getUser = (userId) => User.findOne({where : {userId}, attributes : ['email', 'name', 'phone']});
+
+exports.updateUser = (email, phone) => User.update({phone}, {where : {email}});

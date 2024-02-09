@@ -27,3 +27,13 @@ exports.getUser = async (userId) => {
     };
     return user;
 };
+
+exports.updateUser = async (email, phone) => {
+    const user = await userRepository.findUserByEmail(email);
+    if(!user){
+        console.error('[userService] 유저 정보 업데이트 실패');
+        throw ('Not updated');
+    };
+    await userRepository.updateUser(email, phone);
+    console.log(`${email} 유저 정보 업데이트 완료`);
+};

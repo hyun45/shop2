@@ -20,3 +20,10 @@ exports.findUser = async (req, res, next) => {
         .then((user) => res.json(response.responseFromData(responseText.response_text.success, responseText.user_message.get, user)))
         .catch(error => next(error)); 
 };
+
+exports.updateUser = async (req, res, next) => {
+    const {email, phone} = req.body;
+    await userService.updateUser(email, phone)
+        .then(() => res.status(200).json(response.responseFromMessage(responseText.response_text.success, responseText.user_message.update)))
+        .catch(error => next(error));
+};
