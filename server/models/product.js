@@ -49,3 +49,7 @@ module.exports = class Product extends Sequelize.Model {
         })
     }
 }
+
+// mainCategory -> 1 : 강아지, 2 : 고양이
+// subCategory -> 11 : 강아지 장난감, 12: 강아지 사료, 13: 강아지 간식, 14: 강아지 옷, 15: 강아지 용품
+//                21 : 고양이 장난감, 22: 고양이 사료, 23: 고양이 간식, 24: 고양이 옷, 25: 고양이 용품

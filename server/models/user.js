@@ -42,3 +42,5 @@ module.exports = class User extends Sequelize.Model {
         })
     }
 }
+
+// userType -> 1: 관리자, 0: 일반회원
