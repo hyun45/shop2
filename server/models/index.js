@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 const User = require('./user');
 const Address = require('./address');
-const Category = require('./category');
 const Product = require('./product');
 const Cart = require('./cart');
 const CartItem = require('./cartItem');
@@ -24,7 +23,6 @@ db.Sequelize = Sequelize;
 
 db.User = User;
 db.Address = Address;
-db.Category = Category;
 db.Product = Product;
 db.Cart = Cart;
 db.CartItem = CartItem;
@@ -36,7 +34,6 @@ db.OrderItem = OrderItem;
 
 User.init(sequelize);
 Address.init(sequelize);
-Category.init(sequelize);
 Product.init(sequelize);
 Cart.init(sequelize);
 CartItem.init(sequelize);
@@ -47,8 +44,6 @@ Order.init(sequelize);
 OrderItem.init(sequelize);
 
 Address.associate(db);
-Category.associate(db);
-Product.associate(db);
 Cart.associate(db);
 CartItem.associate(db);
 WishList.associate(db);

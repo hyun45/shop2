@@ -25,23 +25,15 @@ module.exports = class Product extends Sequelize.Model {
                 type: Sequelize.STRING,
                 allowNull: true
             },
-            image2: {
-                type: Sequelize.BLOB,
-                allowNull: true
-            },
-            image3: {
-                type: Sequelize.BLOB,
-                allowNull: true
-            },
-            image4: {
-                type: Sequelize.BLOB,
-                allowNull: true
-            },
-            image5: {
-                type: Sequelize.BLOB,
-                allowNull: true
-            },
             stock: {
+                type: Sequelize.INTEGER,
+                allowNull: false
+            },
+            mainCategory: {
+                type: Sequelize.INTEGER,
+                allowNull: false
+            },
+            subCategory: {
                 type: Sequelize.INTEGER,
                 allowNull: false
             }
@@ -55,9 +47,5 @@ module.exports = class Product extends Sequelize.Model {
             charset: 'utf8mb4',
             collate: 'utf8mb4_general_ci',
         })
-    }
-
-    static associate(db){
-        db.Product.belongsTo(db.Category,  { foreignKey: 'categoryId', targetKey: 'categoryId' });
     }
 }

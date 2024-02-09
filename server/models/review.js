@@ -20,26 +20,6 @@ module.exports = class Review extends Sequelize.Model {
             image1: {
                 type: Sequelize.STRING(255),
                 allowNull: true
-            },
-            image2: {
-                type: Sequelize.STRING(255),
-                allowNull: true
-            },
-            image3: {
-                type: Sequelize.STRING(255),
-                allowNull: true
-            },
-            image4: {
-                type: Sequelize.STRING(255),
-                allowNull: true
-            },
-            image5: {
-                type: Sequelize.STRING(255),
-                allowNull: true
-            },
-            showProduct: {
-                type: Sequelize.BOOLEAN,
-                defaultValue: true
             }
             }, {
             sequelize,
