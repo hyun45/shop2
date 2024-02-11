@@ -24,3 +24,11 @@ exports.auth_message = {
     fail_is_not_login : '[auth] 로그인 상태입니다.',
     fail_not_permission : '[auth] 권한이 없습니다.'
 };
+
+exports.product_message = {
+    create : '[product] 상품 추가 완료',
+    get : '[product] 상품 요청 완료',
+    delete : '[product] 상품 삭제 완료',
+    update : '[product] 상품 업데이트 완료',
+    error : '[product] 오류 발생'
+};

@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const indexRouter = require('./routes');
 const userRouter = require('./routes/userRoute');
 const authRouter = require('./routes/authRoute');
+const productRouter = require('./routes/productRoute');
 const { sequelize } = require('./models');
 
 const passport = require('passport');
@@ -47,15 +48,18 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
+app.use('/product', productRouter);
 
-app.use((err, req, res, next) => {
-    console.error(err);
+app.use('/upload', express.static('upload'));
+
+app.use((req, res, next, error) => {
+    console.error(error);
     res.status(500)
         .json(
             response.responseFromData(
             responseText.response_text.fail,
             responseText.response_text.denied,
-            err
+            error
             )
         );
 });
