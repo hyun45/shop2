@@ -6,6 +6,7 @@ const response = require('../data/responseFrom');
 const responseText = require('../data/responseString');
 
 router.post('/addCart', authService.isLoggedIn, cartController.addCart);
+router.get('/:userId', authService.isLoggedIn, authService.isPermissionIn, cartController.allCartList);
 
 router.use((req, res, next) => {
     next('Not found error');

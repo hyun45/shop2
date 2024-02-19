@@ -15,3 +15,12 @@ exports.addCart = async (productId, userId, amount) => {
         await cartRepository.addCart(productId, userId, amount);
     };
 };
+
+exports.getCart = async (userId) => {
+    const cart = await cartRepository.getCart(userId);
+    if(!cart){
+        console.error(`[cartService] ${userId} 정보 없음`);
+        throw `${userId} 정보 없음`;
+    };
+    return cart;
+};

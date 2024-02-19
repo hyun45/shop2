@@ -15,3 +15,5 @@ exports.updateCartItemAmount = async (productId, userId, addAmount) => {
 };
 
 exports.addCart = (productId, userId, amount) => CartItem.create({productId : productId, userId : userId, amount : amount});
+
+exports.getCart = (userId) => CartItem.findAll({where : {userId}});
