@@ -1,17 +1,18 @@
 const express = require('express');
+const morgan = require('morgan');
 const dotenv = require('dotenv');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const passport = require('passport');
+const passportConfig = require('./passport');
+
+const { sequelize } = require('./models');
+
 const indexRouter = require('./routes');
 const userRouter = require('./routes/userRoute');
 const authRouter = require('./routes/authRoute');
 const productRouter = require('./routes/productRoute');
-const { sequelize } = require('./models');
-
-const passport = require('passport');
-const passportConfig = require('./passport');
-
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const morgan = require('morgan');
+const adminRouter = require('./routes/adminRoute');
 
 dotenv.config();
 passportConfig();
@@ -49,8 +50,14 @@ app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 app.use('/product', productRouter);
+app.use('/admin', adminRouter);
 
 app.use('/upload', express.static('upload'));
+
+app.get('/check-login', (req, res) => {
+    // Passport가 제공하는 isAuthenticated 메서드를 사용하여 로그인 상태 확인
+    res.json({ isLoggedIn: req.isAuthenticated() });
+});
 
 app.use((req, res, next, error) => {
     console.error(error);

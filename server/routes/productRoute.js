@@ -5,25 +5,11 @@ const authService = require('../service/authService');
 const productController = require('../controller/productController');
 const response = require('../data/responseFrom');
 const responseText = require('../data/responseString');
-const multer = require('multer');
 
 router.use(bodyParser.json());
 
-const storage = multer.diskStorage({
-    destination : function(req, file, cb){
-        cb(null, 'upload/');
-    }, filename : function(req, file, cb){
-        cb(null, `${Date.now()}_${file.originalname}`);
-    }
-});
-
-const upload = multer({storage : storage});
-
-router.post('/createProduct', authService.isLoggedIn, authService.isAdminIn, productController.createProduct);
-router.post('/image', upload.single('image'), (req, res) => {
-    const imagePath = req.file.path;
-    res.json({imagePath});
-});
+router.get('/', productController.findAllProducts);
+router.get('/:productId', productController.findProduct);
 
 router.use((req, res, next) => {
     next('Not found error');

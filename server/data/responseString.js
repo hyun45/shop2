@@ -32,3 +32,11 @@ exports.product_message = {
     update : '[product] 상품 업데이트 완료',
     error : '[product] 오류 발생'
 };
+
+exports.admin_message = {
+    create : '[admin] 정보 추가 완료',
+    get : '[admin] 정보 요청 완료',
+    delete : '[admin] 정보 삭제 완료',
+    update : '[admin] 정보 업데이트 완료',
+    error : '[admin] 오류 발생'
+};

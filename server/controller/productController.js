@@ -8,3 +8,15 @@ exports.createProduct = async (req, res, next) => {
         .then(() => res.status(200).json(response.responseFromMessage(responseText.response_text.success, responseText.product_message.create)))
         .catch(error => next(error));
 };
+
+exports.findAllProducts = async (req, res, next) => {
+    await productService.findAllProducts()
+        .then((product) => res.status(200).json((response.responseFromMessage(responseText.response_text.success, responseText.product_message.get))))
+        .catch(error => next(error));
+};
+
+exports.findProduct = async (req, res, next) => {
+    await productService.findProduct(req.params.productId)
+    .then((product) => res.status(200).json((response.responseFromMessage(responseText.response_text.success, responseText.product_message.get, product))))
+    .catch(error => next(error));
+};
