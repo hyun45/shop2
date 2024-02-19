@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
 const authService = require('../service/authService');
+const userController = require('../controller/userController');
 const productController = require('../controller/productController');
 const response = require('../data/responseFrom');
 const responseText = require('../data/responseString');
@@ -18,6 +19,9 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({storage : storage});
+
+router.get('/user', authService.isLoggedIn, authService.isAdminIn, userController.findAllUser);
+router.get('/user/:userId', authService.isLoggedIn, authService.isAdminIn, userController.findUser);
 
 router.get('/product', authService.isLoggedIn, authService.isAdminIn, productController.findAllProducts);
 router.get('/product/:productId', authService.isLoggedIn, authService.isAdminIn, productController.findProduct);

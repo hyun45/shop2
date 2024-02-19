@@ -9,14 +9,14 @@ exports.createUser = async (req, res, next) => {
         .catch(error => next(error));
 };
 
-exports.getUser = async (req, res, next) => {
+exports.findAllUser = async (req, res, next) => {
     await userService.findAllUser()
         .then((user) => res.status(200).json(response.responseFromData(responseText.response_text.success, responseText.user_message.get, user)))
         .catch(error => next(error));
 };
 
 exports.findUser = async (req, res, next) => {
-    await userService.getUser(req.params.userId)
+    await userService.findUser(req.params.userId)
         .then((user) => res.json(response.responseFromData(responseText.response_text.success, responseText.user_message.get, user)))
         .catch(error => next(error)); 
 };

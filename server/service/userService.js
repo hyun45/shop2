@@ -20,8 +20,8 @@ exports.findAllUser = async () => {
     return user;
 };
 
-exports.getUser = async (userId) => {
-    const user = await userRepository.getUser(userId);
+exports.findUser = async (userId) => {
+    const user = await userRepository.findUser(userId);
     if(!user){
         throw `[userService] ${userId} 유저 정보 없음`;
     };
