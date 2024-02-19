@@ -7,6 +7,7 @@ const responseText = require('../data/responseString');
 
 router.post('/addCart', authService.isLoggedIn, cartController.addCart);
 router.get('/:userId', authService.isLoggedIn, authService.isPermissionIn, cartController.allCartList);
+router.get('/delete/:cartItemId', authService.isLoggedIn, cartController.deleteCartList)    //  authService.isPermissionIn 추가해줘야 함
 
 router.use((req, res, next) => {
     next('Not found error');

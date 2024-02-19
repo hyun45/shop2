@@ -32,6 +32,7 @@ exports.isPermissionIn = async (req, res, next) => {
     console.log(req.user.userId);
     console.log(req.body.userId);
     console.log(req.params.userId);
+    console.log(req.params)
     if(user.userType || (req.user.userId == req.params.userId) || (req.body.userId == req.user.userId)){
         next();
     } else{

@@ -14,3 +14,9 @@ exports.allCartList = async (req, res, next) => {
         .then((cart) => res.status(200).json(response.responseFromData(responseText.response_text.success, responseText.cart_message.get, cart)))
         .catch(error => next(error));
 };
+
+exports.deleteCartList = async (req, res, next) => {
+    await cartService.deleteCartList(req.params.cartItemId)
+        .then((cart) => res.status(200).json(response.responseFromData(responseText.response_text.success, responseText.cart_message.delete, cart)))
+        .catch(error => next(error));
+};

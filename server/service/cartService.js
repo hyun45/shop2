@@ -24,3 +24,11 @@ exports.getCart = async (userId) => {
     };
     return cart;
 };
+
+exports.deleteCartList = async (cartItemId) => {
+    await cartRepository.deleteCartList(cartItemId)
+        .catch(error => {
+            console.error(`[cartService] ${error} 에러 발생`);
+            throw `${cartItemId}가 존재하지 않음`;
+        });
+};
