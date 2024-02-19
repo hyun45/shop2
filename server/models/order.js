@@ -27,7 +27,7 @@ module.exports = class Order extends Sequelize.Model {
     }
 
     static associate(db){
-        db.Order.belongsTo(db.Address,  { foreignKey: 'addressId', targetKey: 'addressId' });
+        db.Order.belongsTo(db.User,  { foreignKey: 'userId', targetKey: 'userId' });
         db.Order.belongsTo(db.Payment,  { foreignKey: 'paymentId', targetKey: 'paymentId' });
     }
 }

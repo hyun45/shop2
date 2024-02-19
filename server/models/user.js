@@ -29,6 +29,18 @@ module.exports = class User extends Sequelize.Model {
             userType: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false
+            }, 
+            address1: {
+                type: Sequelize.STRING(255),
+                allowNull: true
+            },
+            address2: {
+                type: Sequelize.STRING(255),
+                allowNull: true
+            },
+            zipCode: {
+                type: Sequelize.INTEGER,
+                allowNull: true
             }
         }, {
             sequelize,

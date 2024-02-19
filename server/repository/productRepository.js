@@ -1,4 +1,3 @@
-const { where } = require('sequelize');
 const Product = require('../models/product');
 
 exports.findProduct = (productId) => Product.findOne({

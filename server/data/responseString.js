@@ -40,3 +40,11 @@ exports.admin_message = {
     update : '[admin] 정보 업데이트 완료',
     error : '[admin] 오류 발생'
 };
+
+exports.cart_message = {
+    create : '[cart] 장바구니 정보 추가 완료',
+    get : '[cart] 장바구니 정보 요청 완료',
+    delete : '[cart] 장바구니 정보 삭제 완료',
+    update : '[cart] 장바구니 정보 업데이트 완료',
+    error : '[cart] 오류 발생'
+};
