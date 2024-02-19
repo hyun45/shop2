@@ -20,6 +20,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage : storage});
 
 router.get('/product', authService.isLoggedIn, authService.isAdminIn, productController.findAllProducts);
+router.get('/product/:productId', authService.isLoggedIn, authService.isAdminIn, productController.findProduct);
 router.post('/product/createProduct', authService.isLoggedIn, authService.isAdminIn, productController.createProduct);
 router.post('/product/updateProduct', authService.isLoggedIn, authService.isAdminIn, productController.updateProduct);
 router.get('/product/deleteProduct/:productId', authService.isLoggedIn, authService.isAdminIn, productController.deleteProduct);
