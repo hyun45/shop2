@@ -19,8 +19,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage : storage});
 
-
+router.get('/product', authService.isLoggedIn, authService.isAdminIn, productController.findAllProducts);
 router.post('/product/createProduct', authService.isLoggedIn, authService.isAdminIn, productController.createProduct);
+router.post('/product/updateProduct', authService.isLoggedIn, authService.isAdminIn, productController.updateProduct);
 router.post('/image', upload.single('image'), (req, res) => {
     const imagePath = req.file.path;
     res.json({imagePath});

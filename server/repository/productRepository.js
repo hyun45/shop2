@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const Product = require('../models/product');
 
 exports.findProduct = (productId) => Product.findOne({
@@ -9,3 +10,7 @@ exports.createProduct = (name, description, price, image1, stock, mainCategory, 
 });
 
 exports.findAllProducts = () => Product.findAll({});
+
+exports.updateProduct = (productId, name, description, price, image1, stock, mainCategory, subCategory) => Product.update({
+    name, description, price, image1, stock, mainCategory, subCategory
+}, {where : {productId}});

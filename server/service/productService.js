@@ -26,4 +26,13 @@ exports.findProduct = async (productId) => {
         throw `${productId} 상품 정보 없음`;
     };
     return product;
-}
+};
+
+exports.updateProduct = async (productId, name, description, price, image1, stock, mainCategory, subCategory) => {
+    const product = await productRepository.updateProduct(productId, name, description, price, image1, stock, mainCategory, subCategory);
+    if(!product){
+        console.error(`[productService] ${productId} 상품 정보 업데이트 실패`);
+        throw `${productId} 상품 정보 없음`;
+    };
+    console.log(`${productId} 상품 정보 없데이트 성공`);
+};
