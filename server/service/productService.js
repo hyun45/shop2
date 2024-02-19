@@ -36,3 +36,12 @@ exports.updateProduct = async (productId, name, description, price, image1, stoc
     };
     console.log(`${productId} 상품 정보 없데이트 성공`);
 };
+
+exports.deleteProduct = async (productId) => {
+    const product = await productRepository.deleteProduct(productId);
+    if(!product){
+        console.error(`[productService] ${productId} 상품 정보 삭제 실패`);
+        throw `${productId} 상품 정보 없음`;
+    };
+    console.log(`${productId} 상품 정보 삭제 성공`);
+};

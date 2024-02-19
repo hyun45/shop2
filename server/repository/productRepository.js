@@ -14,3 +14,5 @@ exports.findAllProducts = () => Product.findAll({});
 exports.updateProduct = (productId, name, description, price, image1, stock, mainCategory, subCategory) => Product.update({
     name, description, price, image1, stock, mainCategory, subCategory
 }, {where : {productId}});
+
+exports.deleteProduct = (productId) => Product.destroy({where : {productId}});

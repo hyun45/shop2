@@ -27,3 +27,10 @@ exports.updateProduct = async (req, res, next) => {
         .then(() => res.status(200).json(response.responseFromMessage(responseText.response_text.success, responseText.product_message.update)))
         .catch(error => next(error));
 };
+
+exports.deleteProduct = async (req, res, next) => {
+    const productId = req.params.productId;
+    await productService.deleteProduct(productId)
+        .then(() => res.status(200).json(response.responseFromMessage(responseText.response_text.success, responseText.product_message.delete)))
+        .catch(error => next(error));
+};
