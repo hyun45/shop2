@@ -7,6 +7,7 @@ const responseText = require('../data/responseString');
 
 router.post('/', authService.isLoggedIn, orderController.createOrder);
 router.get('/orderHistory', authService.isLoggedIn, orderController.findOrderHistory);
+router.get('/:orderItemId', authService.isLoggedIn, orderController.findOrder);
 
 router.use((req, res, next) => {
     next('Not found error');
