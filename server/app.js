@@ -14,6 +14,7 @@ const authRouter = require('./routes/authRoute');
 const productRouter = require('./routes/productRoute');
 const adminRouter = require('./routes/adminRoute');
 const cartRouter = require('./routes/cartRoute');
+const orderRouter = require('./routes/orderRoute');
 
 dotenv.config();
 passportConfig();
@@ -53,6 +54,7 @@ app.use('/auth', authRouter);
 app.use('/product', productRouter);
 app.use('/admin', adminRouter);
 app.use('/cart', cartRouter);
+app.use('/order', orderRouter);
 
 app.use('/upload', express.static('upload'));
 

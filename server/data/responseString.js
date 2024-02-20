@@ -48,3 +48,11 @@ exports.cart_message = {
     update : '[cart] 장바구니 정보 업데이트 완료',
     error : '[cart] 오류 발생'
 };
+
+exports.order_message = {
+    create : '[order] 주문 정보 추가 완료',
+    get : '[order] 주문 정보 요청 완료',
+    delete : '[order] 주문 정보 삭제 완료',
+    update : '[order] 주문 정보 업데이트 완료',
+    error : '[order] 오류 발생'
+};
