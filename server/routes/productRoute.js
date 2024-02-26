@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
-const authService = require('../service/authService');
 const productController = require('../controller/productController');
 const response = require('../data/responseFrom');
 const responseText = require('../data/responseString');
