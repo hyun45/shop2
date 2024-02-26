@@ -10,6 +10,10 @@ exports.createProduct = (name, description, price, image1, stock, mainCategory, 
 
 exports.findAllProducts = () => Product.findAll({});
 
+exports.findMainCateogryProducts = (mainCategory) => Product.findAll({where : {mainCategory}});
+
+exports.findSubCateogryProducts = (subCategory) => Product.findAll({where : {subCategory}});
+
 exports.updateProduct = (productId, name, description, price, image1, stock, mainCategory, subCategory) => Product.update({
     name, description, price, image1, stock, mainCategory, subCategory
 }, {where : {productId}});

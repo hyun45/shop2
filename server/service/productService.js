@@ -28,6 +28,24 @@ exports.findProduct = async (productId) => {
     return product;
 };
 
+exports.findMainCateogryProducts = async (mainCategory) => {
+    const product = await productRepository.findMainCateogryProducts(mainCategory);
+    if(!product){
+        console.error(`[productService] ${mainCategory} 상품 정보 없음`);
+        throw `${mainCategory} 상품 정보 없음`;
+    };
+    return product;
+};
+
+exports.findSubCateogryProducts = async (subCategory) => {
+    const product = await productRepository.findSubCateogryProducts(subCategory);
+    if(!product){
+        console.error(`[productService] ${subCategory} 상품 정보 없음`);
+        throw `${subCategory} 상품 정보 없음`;
+    };
+    return product;
+};
+
 exports.updateProduct = async (productId, name, description, price, image1, stock, mainCategory, subCategory) => {
     const product = await productRepository.updateProduct(productId, name, description, price, image1, stock, mainCategory, subCategory);
     if(!product){

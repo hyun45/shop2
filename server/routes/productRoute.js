@@ -9,6 +9,8 @@ router.use(bodyParser.json());
 
 router.get('/', productController.findAllProducts);
 router.get('/:productId', productController.findProduct);
+router.get('/mainCategory/:mainCategory', productController.findMainCateogryProducts);
+router.get('/subCategory/:subCategory', productController.findSubCateogryProducts);
 
 router.use((req, res, next) => {
     next('Not found error');

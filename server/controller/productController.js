@@ -21,6 +21,18 @@ exports.findProduct = async (req, res, next) => {
     .catch(error => next(error));
 };
 
+exports.findMainCateogryProducts = async (req, res, next) => {
+    await productService.findMainCateogryProducts(req.params.mainCategory)
+    .then((product) => res.status(200).json((response.responseFromMessage(responseText.response_text.success, responseText.product_message.get, product))))
+    .catch(error => next(error));
+};
+
+exports.findSubCateogryProducts = async (req, res, next) => {
+    await productService.findSubCateogryProducts(req.params.subCategory8)
+    .then((product) => res.status(200).json((response.responseFromMessage(responseText.response_text.success, responseText.product_message.get, product))))
+    .catch(error => next(error));
+};
+
 exports.updateProduct = async (req, res, next) => {
     const {productId, name, description, price, image1, stock, mainCategory, subCategory} = req.body;
     await productService.updateProduct(productId, name, description, price, image1, stock, mainCategory, subCategory)
