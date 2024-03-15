@@ -27,46 +27,86 @@ Controller, Service, Repository 설계 방식을 따라 개발하였고, API 설
 ### Postman 예시
 <br/>
 
-**회원 가입 API**
-<br/>
-![postman_register](https://github.com/hyun45/shop2/assets/97267651/2886fc85-5a78-4055-ac5e-a9d9831bd186)
-<br/>
-
-**로그인 및 로그아웃 API**
-<br/>
-![postman_login](https://github.com/hyun45/shop2/assets/97267651/8b6dba7d-aeda-429f-b02a-0552a90c1911)
-![postman_logout](https://github.com/hyun45/shop2/assets/97267651/4547e1c7-784b-4fee-8557-34b0a345fbf9)
-<br/>
-
-**회원 정보 조회 API**
-<br/>
-![postman_userInfo](https://github.com/hyun45/shop2/assets/97267651/cdecf6db-9845-40d3-9015-6068ea88a366)
-<br/>
-다른 유저 정보 조회 권한 없음
-<br/>
-![postman_userInfo_fail](https://github.com/hyun45/shop2/assets/97267651/7d1857f8-5480-4389-b8da-111be1f80477)
-<br/>
-
-**회원 정보 수정 및 회원 탈퇴 API**
-<br/>
-![postman_userInfo_update](https://github.com/hyun45/shop2/assets/97267651/e4ed0ac9-2c1c-4450-ab1f-dc147e24b3e4)
-![postman_delete_user](https://github.com/hyun45/shop2/assets/97267651/4ab58f56-8775-4a4c-a533-8a477d6a1e20)
-<br/>
-
-**상품 등록 API**
-<br/>
-![postman_createProduct](https://github.com/hyun45/shop2/assets/97267651/f5556471-df99-4593-9bfb-f42224541808)
-<br/>
-
-**상품 등록 및 조회 API**
-<br/>
-![postman_createProduct](https://github.com/hyun45/shop2/assets/97267651/f5556471-df99-4593-9bfb-f42224541808)
-![postman_all_product](https://github.com/hyun45/shop2/assets/97267651/294d1370-7dd8-4dc5-9f34-2b9e66dba5ae)
-<br/>
-
-**장바구니 등록 및 조회 API**
-<br/>
-![postman_cart](https://github.com/hyun45/shop2/assets/97267651/58ae326d-1989-4614-96c2-548bf143eae5)
-![postman_add_cart](https://github.com/hyun45/shop2/assets/97267651/3dd7d35d-7ab7-4476-87a0-6aa6337f6018)
-<br/>
-
+<html>
+<table>
+  <tr>
+    <th>
+        **회원 가입 API**
+    </th>
+    <th>
+        **로그인 API**
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/hyun45/shop2/assets/97267651/2886fc85-5a78-4055-ac5e-a9d9831bd186" />
+    </td>
+    <td>
+      <img src="https://github.com/hyun45/shop2/assets/97267651/8b6dba7d-aeda-429f-b02a-0552a90c1911" />
+    </td>
+   </tr> 
+  <tr>
+    <th>
+        **회원 정보 조회 API**
+    </th>
+    <th>
+        **다른 유저 정보 조회 권한 없음**
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/hyun45/shop2/assets/97267651/cdecf6db-9845-40d3-9015-6068ea88a366" />
+    </td>
+    <td>
+      <img src="https://github.com/hyun45/shop2/assets/97267651/7d1857f8-5480-4389-b8da-111be1f80477" />
+    </td>
+   </tr>
+  <tr>
+    <th>
+        **회원 정보 수정 API**
+    </th>
+    <th>
+        **회원 탈퇴 API**
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/hyun45/shop2/assets/97267651/e4ed0ac9-2c1c-4450-ab1f-dc147e24b3e4" />
+    </td>
+    <td>
+      <img src="https://github.com/hyun45/shop2/assets/97267651/4ab58f56-8775-4a4c-a533-8a477d6a1e20" />
+    </td>
+   </tr>
+   <tr>
+    <th>
+        **상품 등록 API**
+    </th>
+    <th>
+        **상품 조회 API**
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/hyun45/shop2/assets/97267651/f5556471-df99-4593-9bfb-f42224541808" />
+    </td>
+    <td>
+      <img src="https://github.com/hyun45/shop2/assets/97267651/294d1370-7dd8-4dc5-9f34-2b9e66dba5ae" />
+    </td>
+    <tr>
+    <th>
+        **장바구니 등록 API**
+    </th>
+    <th>
+        **장바구니 조회 API**
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/hyun45/shop2/assets/97267651/3dd7d35d-7ab7-4476-87a0-6aa6337f6018" />
+    </td>
+    <td>
+      <img src="https://github.com/hyun45/shop2/assets/97267651/58ae326d-1989-4614-96c2-548bf143eae5" />
+    </td>
+   </tr> 
+</table>
+</html>
