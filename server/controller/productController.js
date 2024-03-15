@@ -11,7 +11,7 @@ exports.createProduct = async (req, res, next) => {
 
 exports.findAllProducts = async (req, res, next) => {
     await productService.findAllProducts()
-        .then((product) => res.status(200).json((response.responseFromMessage(responseText.response_text.success, responseText.product_message.get))))
+        .then((product) => res.status(200).json((response.responseFromData(responseText.response_text.success, responseText.product_message.get, product))))
         .catch(error => next(error));
 };
 
