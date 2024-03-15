@@ -31,10 +31,10 @@ Controller, Service, Repository 설계 방식을 따라 개발하였고, API 설
 <table>
   <tr>
     <th>
-        **회원 가입 API**
+        회원 가입 API
     </th>
     <th>
-        **로그인 API**
+        로그인 API
     </th>
   </tr>
   <tr>
@@ -47,10 +47,10 @@ Controller, Service, Repository 설계 방식을 따라 개발하였고, API 설
    </tr> 
   <tr>
     <th>
-        **회원 정보 조회 API**
+        회원 정보 조회 API
     </th>
     <th>
-        **다른 유저 정보 조회 권한 없음**
+        다른 유저 정보 조회 권한 없음
     </th>
   </tr>
   <tr>
@@ -63,10 +63,10 @@ Controller, Service, Repository 설계 방식을 따라 개발하였고, API 설
    </tr>
   <tr>
     <th>
-        **회원 정보 수정 API**
+        회원 정보 수정 API
     </th>
     <th>
-        **회원 탈퇴 API**
+        회원 탈퇴 API
     </th>
   </tr>
   <tr>
@@ -79,10 +79,10 @@ Controller, Service, Repository 설계 방식을 따라 개발하였고, API 설
    </tr>
    <tr>
     <th>
-        **상품 등록 API**
+        상품 등록 API
     </th>
     <th>
-        **상품 조회 API**
+        상품 조회 API
     </th>
   </tr>
   <tr>
@@ -94,10 +94,10 @@ Controller, Service, Repository 설계 방식을 따라 개발하였고, API 설
     </td>
     <tr>
     <th>
-        **장바구니 등록 API**
+        장바구니 등록 API
     </th>
     <th>
-        **장바구니 조회 API**
+        장바구니 조회 API
     </th>
   </tr>
   <tr>
